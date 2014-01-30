@@ -1,36 +1,14 @@
 define(
-    ['jQuery', 'kendo', 'app/dataService', 'text!../../../views/test.html'],
-    function($, kendo, dataService, testHtml) {
+    ['jQuery', 'kendo', 'text!../../../views/test.html'],
+    function($, kendo, testHtml) {
         
         var viewModel = kendo.observable({
             linkTitle: "Go home",
-            paramValue: "<none>",
-            checkIsSignedIn: checkIsSignedIn,
-            isSignedIn: "Haven't checked yet"
+            paramValue: "<none>"
     	});
-
-        function checkIsSignedIn() {
-            dataService.isSignedIn()
-                .done(function(data) {
-                    if (data && data.isSignedIn) {
-                        viewModel.set("isSignedIn", "Yup");
-                    } else {
-                        viewModel.set("isSignedIn", "Nope");
-                    }
-                });
-        }
         
     	return {
     		html: testHtml,
-            
-    		init: function(e) {
-                
-    		},
-            
-            beforeShow: function (e) {
-                
-            },
-     
             show: function (e) {
                 var a = e.view.params.a;
                 
@@ -38,7 +16,6 @@ define(
                     viewModel.set("paramValue", a);
                 }
             },
-            
     		viewModel: viewModel
     	};
     }

@@ -8,19 +8,6 @@ define(
 
     	return {
     		html: homeHtml,
-            
-    		init: function(event) {
-
-    		},
-            
-            beforeShow: function (beforeShowEvt) {
-                
-            },
-     
-            show: function (showEvt) {
-                
-            },
-            
     		viewModel: viewModel
     	};
     }
