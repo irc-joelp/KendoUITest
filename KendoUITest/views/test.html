@@ -1,0 +1,20 @@
+<div id="test-view" data-role="view" data-title="Test"
+    data-init="app.views.test.init"
+    data-before-show="app.views.test.beforeShow"
+    data-show="app.views.test.show"
+    data-model="app.views.test.viewModel">
+
+    <div class="view-content">
+        <p>
+            <a href="#home-view" data-role="button"><span data-bind="text: linkTitle"></span></a>
+        </p>
+        
+        <p>
+            The parameter passed in was: <span data-bind="text: paramValue"></span>
+        </p>
+        
+        <p>
+            <a data-role="button" data-bind="click: checkIsSignedIn">Signed In?</a> <span data-bind="text: isSignedIn"></span>
+        </p>
+    </div>
+</div>
